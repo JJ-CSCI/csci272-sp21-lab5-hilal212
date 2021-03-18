@@ -2,10 +2,51 @@
 //  DO NOT MODIFY NEXT LINE
 //------------------------------
 #include "catch.hpp"
-//------------------------------
+using namespace std;
 
 // Write the assignment code here
-
+class Real{
+private :
+double Real;
+public:
+Real(double r) : re(r)
+{
+}
+double GetReal() ,const {return re;}
+//
+Real operator+ (double v)
+{
+return Real(re + v);
+}};
+class Complex : public Real
+{
+private:
+double im; 
+public:
+Complex(double r, double i) : Real(r), im(i)
+{}
+double GetImaginary() const
+{
+return im;
+}
+Complex operator+(double v)
+{
+return Complex (GetReal()+ v, im + v);
+}
+}; 
+public:
+// Initialize re,im and add sur
+Surreal(double a, double b, double c) : Complex(a, b), sur(c) 
+{}
+// Accessor to return Surreal
+double GetSurreal()
+{
+return Surreal;
+}
+Surreal operator+(double v)
+{
+return Surreal (Get Real()+v, GetImaginary()+v,Surreal+v);
+}; 
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
